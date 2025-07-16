@@ -2,6 +2,8 @@
 name = "python-project-template"
 description = "Change me"
 readme = "README.md"
+license = "GPL-3.0-only"
+license-files = ["LICENSE"]
 requires-python = "~=3.11"
 dynamic = ["version"]
 dependencies = [
