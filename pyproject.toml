@@ -1,9 +1,9 @@
 [project]
 name = "python-project-template"
-version = "0.1.0"
 description = "Change me"
 readme = "README.md"
 requires-python = "~=3.11"
+dynamic = ["version"]
 dependencies = [
 ]
 
@@ -17,6 +17,12 @@ dev = [
   "typing-extensions",
   "flake8-pyproject",
 ]
+
+[build-system]
+requires = ["setuptools >= 77.0.3", "setuptools-scm>=8"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
 
 [tool.pyright]
 typeCheckingMode = "standard"
