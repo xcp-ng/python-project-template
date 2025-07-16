@@ -11,7 +11,7 @@ jobs:
     permissions:
       security-events: write  # needed for SARIF uploads
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           persist-credentials: false
       - uses: astral-sh/setup-uv@bd01e18f51369d5a26f1651c3cb451d3417e3bba  # v6.3.1
