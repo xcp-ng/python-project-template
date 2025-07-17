@@ -2,7 +2,6 @@
 icecream
 mypy
 flake8
-pydocstyle
 pyright
 ruff
 typing-extensions
