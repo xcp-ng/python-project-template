@@ -55,5 +55,18 @@ ignore = [
   "SIM108",  # if-else-block-instead-of-if-exp
 ]
 
+[tool.ruff.lint.isort.sections]
+testing = ["pytest*"]
+typing = ["typing"]
+
 [tool.ruff.lint.isort]
 lines-after-imports = 1
+section-order = [
+    "future",
+    "testing",
+    "standard-library",
+    "third-party",
+    "first-party",
+    "local-folder",
+    "typing",
+]
