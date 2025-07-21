@@ -12,7 +12,6 @@ dev = [
   "icecream",
   "mypy",
   "flake8",
-  "pydocstyle",
   "pyright",
   "ruff",
   "typing-extensions",
@@ -31,13 +30,27 @@ quote-style = "preserve"
 
 [tool.ruff.lint]
 select = [
+  "D",  # pydocstyle
   "F",  # Pyflakes
   "I",  # isort
   "SLF",  # flake8-self
   "SIM",  # flake8-simplify
 ]
-# don't use some of the SIM rules
+# don't use some of the default D and SIM rules
 ignore = [
+  "D100",  # undocumented-public-module
+  "D101",  # undocumented-public-class
+  "D102",  # undocumented-public-method
+  "D103",  # undocumented-public-function
+  "D104",  # undocumented-public-package
+  "D105",  # undocumented-magic-method
+  "D106",  # undocumented-public-nested-class
+  "D107",  # undocumented-public-init
+  "D203",  # incorrect-blank-line-before-class
+  "D210",  # surrounding-whitespace
+  "D212",  # incorrect-blank-line-before-class
+  "D401",  # non-imperative-mood
+  "D403",  # first-word-uncapitalized
   "SIM105",  # suppressible-exception
   "SIM108",  # if-else-block-instead-of-if-exp
 ]
