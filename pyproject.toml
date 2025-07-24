@@ -15,6 +15,7 @@ dev = [
   "pyright",
   "ruff",
   "typing-extensions",
+  "flake8-pyproject",
 ]
 
 [tool.pyright]
@@ -70,3 +71,16 @@ section-order = [
     "local-folder",
     "typing",
 ]
+
+# ruff doesn't provide all the pycodestyle rules, and pycodestyle is not well
+# supported by some IDEs, so we use flake8 for that
+[tool.flake8]
+max-line-length = 120
+ignore = [
+  "E261",  # At least two spaces before inline comment
+  "E302",  # Expected 2 blank lines, found 0
+  "E305",  # Expected 2 blank lines after end of function or class
+  "W503",  # Line break occurred before a binary operator
+  "F",  # already done by ruff
+]
+exclude=[".git", ".venv"]
