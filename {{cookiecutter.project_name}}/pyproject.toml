@@ -1,6 +1,6 @@
 [project]
-name = "python-project-template"
-description = "Change me"
+name = "{{cookiecutter.project_name}}"
+description = "{{cookiecutter.description}}"
 readme = "README.md"
 license = "GPL-3.0-only"
 license-files = ["LICENSE"]

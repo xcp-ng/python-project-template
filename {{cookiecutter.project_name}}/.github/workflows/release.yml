@@ -44,9 +44,9 @@ jobs:
           name: artifacts
           path: dist/
 
-      - name: Create release ${{ github.ref_name }}
+      - name: Create release ${{ '{{' }} github.ref_name {{ '}}' }}
         shell: bash
         run: |
-          gh release create ${GITHUB_REF_NAME} --repo ${{ github.repository }} --generate-notes dist/*
+          gh release create ${GITHUB_REF_NAME} --repo ${{ '{{' }} github.repository {{ '}}' }} --generate-notes dist/*
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ '{{' }} secrets.GITHUB_TOKEN {{ '}}' }}
