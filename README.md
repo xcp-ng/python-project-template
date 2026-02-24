@@ -2,7 +2,10 @@
 
 This is a template to create a new python project.
 
-Just copy the files in your repository, edit the project name and description in `pyproject.toml`.
+This project is a [cookiecutter](https://www.cookiecutter.io/) template.
 
-> [!IMPORTANT]
-> Make sure to also copy the `.gitignore`, `.python-version` and `.github` hidden files/directories!
+Install cookiecutter using `[uv tool install cookiecutter](https://docs.astral.sh/uv/reference/cli/#uv-tool-install)`.
+
+Then, run the following command :
+
+  uv tool run cookiecutter https://github.com/xcp-ng/python-project-template
