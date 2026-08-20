@@ -1,0 +1,40 @@
+# Set update schedule for GitHub Actions
+# https://docs.github.com/en/code-security/dependabot/working-with-dependabot/keeping-your-actions-up-to-date-with-dependabot
+# https://docs.github.com/en/code-security/dependabot/working-with-dependabot/dependabot-options-reference#package-ecosystem
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directories:
+      - "/"
+      - "/.github/actions/uv-setup"
+    schedule:
+      interval: "weekly"
+      day: "sunday"
+    cooldown:
+      default-days: 7
+    commit-message:
+      prefix: "uv.lock: "
+    groups:
+      ci-deps:
+        patterns:
+          - "*"
+
+  - package-ecosystem: "uv"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "sunday"
+    open-pull-requests-limit: 10
+    cooldown:
+      default-days: 7
+    commit-message:
+      prefix: "uv.lock: "
+    groups:
+      base-deps:
+        dependency-type: "production"
+        patterns:
+          - "*"
+      dev-deps:
+        dependency-type: "development"
+        patterns:
+          - "*"
